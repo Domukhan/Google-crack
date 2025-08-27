@@ -15,34 +15,32 @@
             body{
                 background: var(--bg);
                 color: var(--text);
-                font: 16px/1.45 'malgun gothic', sans-serif;
+                font: 16px/1.45 "malgun gothic", sans-serif;
                 display: grid;
                 grid-template-rows: auto 1fr auto;
                min-height: 100vh;
             }
+
             /* top */
-            .topbar-right {
-                display: flex;
-                justify-content: flex-end;
-                padding: 12px 16px;
-                font-size: 14px;
-                align-items: center;
-                gap: 16px;
-            }
-            .topbar-right a{
-                color: var(--text);
-                text-decoration: none;
-            }
-            .topbar-right a :hover {
-                text-decoration: underline;
-            }
-            .topbar-left{
+            .topbar {
                 display: flex;
                 justify-content: space-between;
                 padding: 12px 16px;
                 font-size: 14px;
                 align-items: center;
                 gap: 16px;
+            }
+            .setting {
+                display: flex;
+                align-items: center;
+                gap: 18px;
+            }
+            .setting a {
+                color: var(--text);
+                text-decoration: none;
+            }
+            .setting a :hover {
+                text-decoration: underline;
             }
             .profile{
                 width: 32px; height: 32px; border-radius: 50%;
@@ -55,33 +53,58 @@
                 text-align: center;
                 font-size: clamp(40px, 20vw, 90px);
             }
+            .logo a{
+                color: var(--text);
+                text-decoration: none;
+            }
+            /*body*/
             .serch{
                 display: flex;
                 align-items: center;
-                gap: 3px;
+                gap: 4px;
                 background: var(--bg);
-                padding: 20px;
+                padding: clamp(12px, 2vw, 20px);
                 border-radius: 50px;
                 border: 1px solid var(--border);
                 box-shadow: var(--shadow);
-                margin-left: 300px; margin-right: 300px;
+                margin: 50px auto 0;
+                width: clamp(320px, 60vw, 700px);
+                box-sizing: border-box;
+                justify-content: space-between;
             }
-            .serch a :hover{
-                boder: 1px solid var(--borderclick)
+            .serch-box{
+                width:700px;
+                border:none;
+                outline:none;
+                font-size: 16px;
+            }
+            .serch-setting {
+                display: flex;
+                align-items: center;
+                gap: 18px;
+            }
+            /*bottom*/
+            .footer-text{
+                box-sizing: border-box;
+                display: flex;
+                gap: 20px;
+                padding: 8px 50px 8px 50px;
+                font-size: 14px;
+            }
+            .footer-text a{
+                color: var(--text);
+                text-decoration: none;
             }
 
-            .headerside{
-                display: flex; gap: 16px; align-items: center;"
-            }
         </style>
     </head>
     <body>
-        <header class="topbar-left">
-            <div syyle="display: flex; gap: 16px; align-items: center;">
+        <header class="topbar">
+            <div class="setting">
              <a href="#">Google 정보</a>
              <a href="#">스토어</a>
             </div>
-            <div >
+            <div class="setting">
                 <a href="https://mail.google.com" target="_blank">Gmail</a>
                 <a href="https://google.com" target="_blank">이미지</a>
                 <a href="https://labs.google.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/128/2168/2168283.png" height="20px" width="20px"></a>
@@ -91,11 +114,35 @@
         </header>
         <main>
             <h1 class="logo">
-                Google
+                <a href ="https://google.com">Google</a>
             </h1>
-            <div class="serch">
+           <div class="serch">
+            <div class="serch-setting">
                 <img src="https://cdn-icons-png.flaticon.com/128/2319/2319177.png" width="20px" height="20px">
             </div>
+            <input class="serch-box">
+            <div class="serch-setting">
+                <img src="https://cdn-icons-png.flaticon.com/128/2263/2263611.png" width="20px" height="20px">
+                <img src="https://cdn-icons-png.flaticon.com/128/3747/3747132.png" width="20px" height="20px">
+                <img src="https://cdn-icons-png.flaticon.com/128/1687/1687798.png" width="20px" height="20px">
+            </div>
+           </div>
         </main>
     </body>
+    <footer class="foorter">
+        대한민국
+            <hr>
+        <div style="display:flex; justify-content:space-between;">
+            <div class="footer-text">
+                <a href="">광고</a>
+                <a href="">비즈니스</a>
+                <a href="">검색의 원리</a>
+            </div>
+            <div class="footer-text">
+                <a href="">개인정보처리방침</a>
+                <a href="">약관</a>
+                <a href="">설정</a>
+            </div>
+        </div>
+    </footer>
 </html>
